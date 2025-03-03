@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Untitled</title>
-  <link rel="stylesheet" href="./style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Sequence and Sum</title>
+    <script>
+        function displaySequenceAndSum() {
+            const number = parseInt(document.getElementById("numberInput").value);
+            let sequence = "";
+            let sum = 0;
+            for (let i = 1; i <= number; i++) {
+                sequence += i;
+                if (i < number) {
+                    sequence += "+";
+                }
+                sum += i;
+            }
+            document.getElementById("sequence").innerText = sequence;
+            document.getElementById("sum").innerText = "Sum: " + sum;
+        }
+    </script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<HTML>
-
-  <HEAD> 
-<TITLE>這是rou+++++標題</TITLE> <!---註：這是網頁主題--->
-<link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</HEAD>
-<H1> 我的學習歷程</H1>
- <BODY> 
-<a href="https://www.rssh.kh.edu.tw/index.php?WebID=238" target="_blank" title="123456">瑞祥高中</a>
-      
- <hr><!----註：跑馬燈----->
-  <marquee direction="left"  scrollamount="50" behavior="alternate" ><img src="http://image.sciencenet.cn/album/201706/23/105713s7ic4675b64szza1.jpg" height=50 width=50>恐龍</marquee>
-      <hr>
-    </BODY> <!----註：從這裡是本文部份的結束 ----->
-
-</HTML>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+    <h1>Number Sequence and Sum</h1>
+    <div>
+        <input type="number" id="numberInput" min="1" placeholder="Enter a number">
+        <button onclick="displaySequenceAndSum()">Calculate</button>
+    </div>
+    <div>
+        <p id="sequence"></p>
+        <p id="sum"></p>
+    </div>
 </body>
 </html>
